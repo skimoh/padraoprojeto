@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeBehind.PadraoProjeto.Api.Mediator</name>
+    </assembly>
+    <members>
+        <member name="T:mediator.Controller.ClienteController">
+            <summary>
+            API DE CLIENTES
+            </summary>
+        </member>
+        <member name="M:mediator.Controller.ClienteController.#ctor(MediatR.IMediator)">
+            <summary>
+            Construtor da classe cliente
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:mediator.Controller.ClienteController.Get(mediator.application.ClienteConsultarCommand)">
+            <summary>
+            CONSULTAR CLIENTE PELO NOME
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:mediator.Controller.ClienteController.Post(mediator.application.ClienteInserirCommand)">
+            <summary>
+            PERSISTIR CLIENTE
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="T:mediator.Program">
+            <summary>
+            CLASSE INICIAL
+            </summary>
+        </member>
+        <member name="M:mediator.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CREATE SELF HOSTING
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -3,3 +3,11 @@
 ################################################################################
 
 /CodeBehind/.vs
+/CodeBehind/CodeBehind.PadraoProjeto.Api.Mediator/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Api.Mediator/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.Application/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Application/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.Dto/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Dto/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.Repository/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Repository/bin/Debug/netcoreapp3.1
