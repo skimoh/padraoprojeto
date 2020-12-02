@@ -1,11 +1,12 @@
+//***CODE BEHIND - BY RODOLFO.FONSECA***//
 using System;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
-using mediator.application;
-using mediator.dto;
-using mediator.repository;
-using mediator.repository.Entity;
+using CodeBehind.PadraoProjeto.Application;
+using CodeBehind.PadraoProjeto.Dto;
+using CodeBehind.PadraoProjeto.Repository;
+using CodeBehind.PadraoProjeto.Repository.Entity;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,7 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.PlatformAbstractions;
 
-namespace mediator
+namespace CodeBehind.PadraoProjeto.Api.Mediator
 {
     public class Startup
     {

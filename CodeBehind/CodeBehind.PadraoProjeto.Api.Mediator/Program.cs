@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+//***CODE BEHIND - BY RODOLFO.FONSECA***//
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
-namespace mediator
+namespace CodeBehind.PadraoProjeto.Api.Mediator
 {
     /// <summary>
     /// CLASSE INICIAL

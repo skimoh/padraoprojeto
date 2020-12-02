@@ -1,11 +1,10 @@
-﻿using System.Threading.Tasks;
-using mediator.application;
-using mediator.repository;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+using System.Threading.Tasks;
+using CodeBehind.PadraoProjeto.Application;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace mediator.Controller
+namespace CodeBehind.PadraoProjeto.Api.Mediator.Controller
 {
     /// <summary>
     /// API DE CLIENTES

@@ -4,37 +4,37 @@
         <name>CodeBehind.PadraoProjeto.Api.Mediator</name>
     </assembly>
     <members>
-        <member name="T:mediator.Controller.ClienteController">
+        <member name="T:CodeBehind.PadraoProjeto.Api.Mediator.Controller.ClienteController">
             <summary>
             API DE CLIENTES
             </summary>
         </member>
-        <member name="M:mediator.Controller.ClienteController.#ctor(MediatR.IMediator)">
+        <member name="M:CodeBehind.PadraoProjeto.Api.Mediator.Controller.ClienteController.#ctor(MediatR.IMediator)">
             <summary>
             Construtor da classe cliente
             </summary>
             <param name="mediator"></param>
         </member>
-        <member name="M:mediator.Controller.ClienteController.Get(mediator.application.ClienteConsultarCommand)">
+        <member name="M:CodeBehind.PadraoProjeto.Api.Mediator.Controller.ClienteController.Get(CodeBehind.PadraoProjeto.Application.ClienteConsultarCommand)">
             <summary>
             CONSULTAR CLIENTE PELO NOME
             </summary>
             <param name="filter"></param>
             <returns></returns>
         </member>
-        <member name="M:mediator.Controller.ClienteController.Post(mediator.application.ClienteInserirCommand)">
+        <member name="M:CodeBehind.PadraoProjeto.Api.Mediator.Controller.ClienteController.Post(CodeBehind.PadraoProjeto.Application.ClienteInserirCommand)">
             <summary>
             PERSISTIR CLIENTE
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="T:mediator.Program">
+        <member name="T:CodeBehind.PadraoProjeto.Api.Mediator.Program">
             <summary>
             CLASSE INICIAL
             </summary>
         </member>
-        <member name="M:mediator.Program.CreateHostBuilder(System.String[])">
+        <member name="M:CodeBehind.PadraoProjeto.Api.Mediator.Program.CreateHostBuilder(System.String[])">
             <summary>
             CREATE SELF HOSTING
             </summary>

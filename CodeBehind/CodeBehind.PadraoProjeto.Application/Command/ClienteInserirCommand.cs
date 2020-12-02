@@ -1,6 +1,7 @@
-﻿using MediatR;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+using MediatR;
 
-namespace mediator.application
+namespace CodeBehind.PadraoProjeto.Application
 {
     public class ClienteInserirCommand : IRequest<int>
     {

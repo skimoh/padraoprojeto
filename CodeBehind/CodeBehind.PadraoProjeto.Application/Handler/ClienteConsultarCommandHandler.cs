@@ -1,15 +1,13 @@
-﻿using AutoMapper;
-using mediator.dto;
-using mediator.repository;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+using AutoMapper;
+using CodeBehind.PadraoProjeto.Dto;
+using CodeBehind.PadraoProjeto.Repository;
 using MediatR;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace mediator.application
+namespace CodeBehind.PadraoProjeto.Application
 {
 
     public class ClienteConsultarCommandHandler : IRequestHandler<ClienteConsultarCommand, IEnumerable<ClienteDto>>//, IRequestHandler<ClienteInserirCommand, int>

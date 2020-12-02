@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
-namespace mediator.repository.Entity
+namespace CodeBehind.PadraoProjeto.Repository.Entity
 {
     public class Cliente
     {

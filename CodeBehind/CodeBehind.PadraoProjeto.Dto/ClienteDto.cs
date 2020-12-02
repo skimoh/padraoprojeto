@@ -1,6 +1,7 @@
-﻿using System;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+using System;
 
-namespace mediator.dto
+namespace CodeBehind.PadraoProjeto.Dto
 {
     public class ClienteDto
     {

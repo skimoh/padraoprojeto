@@ -1,11 +1,10 @@
-﻿using mediator.repository.Entity;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+using CodeBehind.PadraoProjeto.Repository.Entity;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace mediator.repository
+namespace CodeBehind.PadraoProjeto.Repository
 {
     public interface IClienteRepository
     {
