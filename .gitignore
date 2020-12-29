@@ -11,3 +11,9 @@
 /CodeBehind/CodeBehind.PadraoProjeto.Dto/bin/Debug/netcoreapp3.1
 /CodeBehind/CodeBehind.PadraoProjeto.Repository/obj
 /CodeBehind/CodeBehind.PadraoProjeto.Repository/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.BFF/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.BFF/obj
+/CodeBehind/CodeBehind.PadraoProjeto.BFF.MSCliente/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.BFF.MSCliente/obj
+/CodeBehind/CodeBehind.PadraoProjeto.BFF.MSPedido/bin/Debug/netcoreapp3.1
+/CodeBehind/CodeBehind.PadraoProjeto.BFF.MSPedido/obj
