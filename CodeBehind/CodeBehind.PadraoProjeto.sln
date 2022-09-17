@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBehind.PadraoProjeto.Api.Mediator", "CodeBehind.PadraoProjeto.Api.Mediator\CodeBehind.PadraoProjeto.Api.Mediator.csproj", "{CD4983AE-72DE-4EC1-A913-517C1627A532}"
 EndProject
@@ -20,6 +20,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBehind.PadraoProjeto.BFF.MSCliente", "CodeBehind.PadraoProjeto.BFF.MSCliente\CodeBehind.PadraoProjeto.BFF.MSCliente.csproj", "{187CA2A0-8149-4F98-B52E-2B86207F8A63}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBehind.PadraoProjeto.BFF.MSPedido", "CodeBehind.PadraoProjeto.BFF.MSPedido\CodeBehind.PadraoProjeto.BFF.MSPedido.csproj", "{E5C68CED-6E25-43D3-B331-43E141E0A533}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UOW", "UOW", "{B3AFEE24-492D-4CC2-A038-8C6F589474BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.UnidadeTrabalho", "CodeBehind.PadraoProjeto.UnidadeTrabalho\CodeBehind.PadraoProjeto.UnidadeTrabalho.csproj", "{C55100DD-A80E-4BCB-87F1-F5D7CDB16D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.UnidadeTrabalho.Repositorio", "CodeBehind.PadraoProjeto.UnidadeTrabalho.Repositorio\CodeBehind.PadraoProjeto.UnidadeTrabalho.Repositorio.csproj", "{4007232B-5A7A-409E-9F6F-E80AB1EC988F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +61,14 @@ Global
 		{E5C68CED-6E25-43D3-B331-43E141E0A533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5C68CED-6E25-43D3-B331-43E141E0A533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5C68CED-6E25-43D3-B331-43E141E0A533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C55100DD-A80E-4BCB-87F1-F5D7CDB16D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C55100DD-A80E-4BCB-87F1-F5D7CDB16D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C55100DD-A80E-4BCB-87F1-F5D7CDB16D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C55100DD-A80E-4BCB-87F1-F5D7CDB16D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4007232B-5A7A-409E-9F6F-E80AB1EC988F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4007232B-5A7A-409E-9F6F-E80AB1EC988F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4007232B-5A7A-409E-9F6F-E80AB1EC988F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4007232B-5A7A-409E-9F6F-E80AB1EC988F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +81,8 @@ Global
 		{A0859B45-D53E-4604-A09D-D6B0CA98E72E} = {215A137D-64B0-491F-BCC6-11C5A830BB87}
 		{187CA2A0-8149-4F98-B52E-2B86207F8A63} = {215A137D-64B0-491F-BCC6-11C5A830BB87}
 		{E5C68CED-6E25-43D3-B331-43E141E0A533} = {215A137D-64B0-491F-BCC6-11C5A830BB87}
+		{C55100DD-A80E-4BCB-87F1-F5D7CDB16D69} = {B3AFEE24-492D-4CC2-A038-8C6F589474BA}
+		{4007232B-5A7A-409E-9F6F-E80AB1EC988F} = {B3AFEE24-492D-4CC2-A038-8C6F589474BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {031046F5-8C50-4F12-8DDB-45B762992F43}
