@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "CodeBehind.PadraoProjeto.GRPC": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5184;https://localhost:7238",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

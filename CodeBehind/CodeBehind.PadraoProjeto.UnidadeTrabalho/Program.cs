@@ -11,7 +11,6 @@ sv.AddDbContext<DBContext>(opt => opt.UseInMemoryDatabase(databaseName: "DBMemor
                ServiceLifetime.Scoped,
                ServiceLifetime.Scoped);
 
-sv.AddControllers();
 sv.AddEndpointsApiExplorer();
 sv.AddSwaggerGen(c =>
 {

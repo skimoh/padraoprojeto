@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "CodeBehind.PadraoProjeto.GRPC";
+
+package greet;
+
+// The greeting service definition.
+service Contrato {
+  // Sends a greeting
+  rpc SayHello (ClienteRequest) returns (ClienteResponse);
+}
+
+// The request message containing the user's name.
+message ClienteRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message ClienteResponse {
+  string message = 1;
+}
