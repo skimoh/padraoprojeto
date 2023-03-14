@@ -21,3 +21,7 @@
 /CodeBehind/CodeBehind.PadraoProjeto.UnidadeTrabalho/obj
 /CodeBehind/CodeBehind.PadraoProjeto.UnidadeTrabalho.Repositorio/bin/Debug/net6.0
 /CodeBehind/CodeBehind.PadraoProjeto.UnidadeTrabalho.Repositorio/obj
+/CodeBehind/CodeBehind.PadraoProjeto.GRPC/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.GRPC/obj
+/CodeBehind/CodeBehind.PadraoProjeto.GRPC.Cliente/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.GRPC.Cliente/obj
