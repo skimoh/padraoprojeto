@@ -25,3 +25,7 @@
 /CodeBehind/CodeBehind.PadraoProjeto.GRPC/obj
 /CodeBehind/CodeBehind.PadraoProjeto.GRPC.Cliente/bin/Debug/net6.0
 /CodeBehind/CodeBehind.PadraoProjeto.GRPC.Cliente/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Maquina/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.Maquina/obj
+/CodeBehind/CodeBehind.PadraoProjeto.MaquinaSaga/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.MaquinaSaga/obj
