@@ -35,7 +35,12 @@ sv.AddMassTransit(cfg =>
     //transporte
     //O transporte na memória destina-se a ser usado apenas em um único processo.(testes) Não pode ser usado para comunicação entre vários processos (mesmo que estejam na mesma máquina).
     cfg.AddBus(context => Bus.Factory.CreateUsingInMemory(cfg =>
-    {
+    { 
+        //politica de retentativa de processar a mensagem
+        //cfg.UseMessageRetry(r =>
+        //{            
+        //    r.Interval(5, TimeSpan.FromMilliseconds(100));
+        //});
         cfg.ReceiveEndpoint("orderRequest", e =>
         {
             e.UseMessageRetry(r => r.Interval(5, 1000));
