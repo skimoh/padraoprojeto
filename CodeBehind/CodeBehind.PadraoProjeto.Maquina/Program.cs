@@ -1,4 +1,8 @@
-﻿using CodeBehind.PadraoProjeto.Maquina;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+
+//MassTransit é uma estrutura de aplicativo distribuído de software livre para .NET
+
+using CodeBehind.PadraoProjeto.Maquina;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,7 +18,7 @@ await Host.CreateDefaultBuilder(args)
             //consumidor
             x.AddConsumer<MessageConsumer>();
 
-            //transport
+            //transporte
             x.UsingInMemory((context, cfg) =>
             {
                 cfg.ConfigureEndpoints(context);

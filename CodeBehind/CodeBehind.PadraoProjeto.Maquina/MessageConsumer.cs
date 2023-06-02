@@ -1,14 +1,13 @@
-﻿using MassTransit;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+using MassTransit;
 using Microsoft.Extensions.Logging;
 
 namespace CodeBehind.PadraoProjeto.Maquina
 {
-    public class Message
-    {
-        public string Text { get; set; }
-    }
-
-    public class MessageConsumer :  IConsumer<Message>
+    /// <summary>
+    /// Consumidor da mensagem enviada no bus
+    /// </summary>
+    public class MessageConsumer : IConsumer<Mensagem>
     {
         readonly ILogger<MessageConsumer> _logger;
 
@@ -22,11 +21,19 @@ namespace CodeBehind.PadraoProjeto.Maquina
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public Task Consume(ConsumeContext<Message> context)
+        public Task Consume(ConsumeContext<Mensagem> context)
         {
-            _logger.LogInformation("Conteudo recebido {Text}", context.Message.Text);
+            _logger.LogInformation($"Conteudo recebido => {context.Message.Conteudo}");
 
             return Task.CompletedTask;
         }
+    }
+
+    /// <summary>
+    /// DTO
+    /// </summary>
+    public record Mensagem
+    {
+        public string? Conteudo { get; set; }
     }
 }

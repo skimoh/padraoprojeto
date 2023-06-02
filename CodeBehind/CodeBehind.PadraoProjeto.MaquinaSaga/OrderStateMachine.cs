@@ -1,4 +1,6 @@
-﻿using CodeBehind.PadraoProjeto.MaquinaSaga.Event;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+
+using CodeBehind.PadraoProjeto.MaquinaSaga.Event;
 using CodeBehind.PadraoProjeto.MaquinaSaga.Models;
 using MassTransit;
 
@@ -29,7 +31,7 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
                     SubmitDate = c.Message.Timestamp,
                     CorrelationId = c.Message.CurrelationId,
                     RequestId = c.Message.RequestId,
-                    InfoComplementar = "Saga Rodolfo"
+                    InfoComplementar = c.Message.Info
                 });
             });
 
@@ -41,35 +43,36 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
                   {
                       context.Saga.CorrelationId = context.Message.CurrelationId;
                       context.Saga.Updated = context.Message.Timestamp;
+                      context.Saga.RequestId = context.RequestId;
                   })
-                  .Then(x => _logger.LogInformation("EventoEnviado"))
+                  .Then(x => _logger.LogInformation("=>EventoEnviado"))
                   .ThenAsync(MetodoEnviar)
                   .TransitionTo(StatusProcessado)
               );
 
             During(StatusProcessado,
                 When(EventoProcessado)
-                  .Then(x => _logger.LogInformation("EventoProcessado"))
+                  .Then(x => _logger.LogInformation("=>EventoProcessado"))
                   .ThenAsync(MetodoProcessar)
                   .TransitionTo(StatusCompletado),
                 When(EventoCancelado)
-                  .Then(x => _logger.LogInformation("StatusCancelado"))
+                  .Then(x => _logger.LogInformation("=>StatusCancelado"))
                   .ThenAsync(MetodoCancelar)
                   .Finalize()
                 );
 
             During(StatusCompletado,
                 When(EventoCompletado)
-                    .Then(x => _logger.LogInformation("StatusCompletado"))
+                    .Then(x => _logger.LogInformation("=>StatusCompletado"))
                     .ThenAsync(MetodoCompletado)
                     .Finalize()
-                );            
+                );
         }
 
         private async Task MetodoCancelar(BehaviorContext<OrderState, IPedidoCancelado> context)
         {
-            _logger.LogInformation("Entrou no MetodoCancelar");
-            
+            _logger.LogInformation("=>Entrou no MetodoCancelar");
+
             var client = await context.GetSendEndpoint(context.Saga.ResponseAddress);
 
             var resp = new PedidoRetorno
@@ -84,7 +87,7 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
 
         private async Task MetodoCompletado(BehaviorContext<OrderState, IPedidoCompletado> context)
         {
-            _logger.LogInformation("Entrou no MetodoCompletado");
+            _logger.LogInformation("=>Entrou no MetodoCompletado");
 
             var client = await context.GetSendEndpoint(context.Saga.ResponseAddress);
 
@@ -99,23 +102,25 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
 
         private Task MetodoProcessar(BehaviorContext<OrderState, IPedidoProcessado> context)
         {
-            _logger.LogInformation("Entrou no MetodoProcessar");
+            _logger.LogInformation("=>Entrou no MetodoProcessar");
 
             return context.Publish<IPedidoCompletado>(new
             {
                 CurrelationId = context.Message.CurrelationId,
-                Timestamp = DateTime.Now                
+                Timestamp = DateTime.Now,
+                RequestId = context.Saga.RequestId
             });
         }
 
         private Task MetodoEnviar(BehaviorContext<OrderState, IPedidoEnviado> context)
         {
-            _logger.LogInformation("Entrou no MetodoEnviar");
+            _logger.LogInformation("=>Entrou no MetodoEnviar");
 
             return context.Publish<IPedidoProcessado>(new
             {
                 CurrelationId = context.Message.CurrelationId,
-                Timestamp = DateTime.Now
+                Timestamp = DateTime.Now,
+                RequestId = context.Saga.RequestId
             });
         }
 

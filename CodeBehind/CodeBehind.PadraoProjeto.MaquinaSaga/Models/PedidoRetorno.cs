@@ -1,4 +1,6 @@
-﻿namespace CodeBehind.PadraoProjeto.MaquinaSaga.Models
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+
+namespace CodeBehind.PadraoProjeto.MaquinaSaga.Models
 {
     public class PedidoRetorno
     {

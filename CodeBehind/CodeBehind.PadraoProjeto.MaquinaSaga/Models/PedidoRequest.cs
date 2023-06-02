@@ -1,7 +1,9 @@
-﻿namespace CodeBehind.PadraoProjeto.MaquinaSaga.Models
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+
+namespace CodeBehind.PadraoProjeto.MaquinaSaga.Models
 {
     public class PedidoRequest
     {
-        public int Info { get; set; }
+        public string Info { get; set; }
     }
 }

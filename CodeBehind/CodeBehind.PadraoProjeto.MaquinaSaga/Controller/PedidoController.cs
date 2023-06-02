@@ -1,4 +1,6 @@
-﻿using CodeBehind.PadraoProjeto.MaquinaSaga.Event;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+
+using CodeBehind.PadraoProjeto.MaquinaSaga.Event;
 using CodeBehind.PadraoProjeto.MaquinaSaga.Models;
 using MassTransit;
 using MassTransit.Transports;
@@ -7,32 +9,53 @@ using Microsoft.AspNetCore.Mvc;
 namespace CodeBehind.PadraoProjeto.MaquinaSaga.Controller
 {
     [Route("api/[controller]")]
-    [ApiController]    
+    [ApiController]
     public class PedidoController : ControllerBase
     {
+        public readonly ILogger<PedidoController> _logger;
 
         readonly IRequestClient<IPedidoEnviado> _client;
 
-        public PedidoController(IRequestClient<IPedidoEnviado> client)
+        public PedidoController(IRequestClient<IPedidoEnviado> client, ILogger<PedidoController> logger)
         {
             _client = client;
+            _logger = logger;
         }
 
+        /// <summary>
+        /// Enviar Pedido
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post()
+        public async Task<IActionResult> Post(PedidoRequest req)
         {
-            var obj = new
+            _logger.LogInformation("=>Iniciando a Saga");
+            try
             {
-                CurrelationId = Guid.NewGuid(),
-                Timestamp = DateTime.Now
-            };
 
-            var req = _client.Create(obj);
+                var obj = new
+                {
+                    CurrelationId = Guid.NewGuid(),
+                    Timestamp = DateTime.Now,
+                    Info = req.Info
+                };
 
-            Response<PedidoRetorno> res = await req.GetResponse<PedidoRetorno>();
+                var resp = _client.Create(obj);
 
-            if (res.Message.Status < 1)
-                return BadRequest(res.Message);
+                Response<PedidoRetorno> ret = await resp.GetResponse<PedidoRetorno>();
+
+                if (ret.Message.Status < 1)
+                    return BadRequest(ret.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            finally
+            {
+                _logger.LogInformation("=>Finalizando a Saga");
+            }
 
             return Ok();
         }

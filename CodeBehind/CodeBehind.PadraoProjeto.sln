@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBehind.PadraoProjeto.GR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GRPC", "GRPC", "{B3644BA8-5654-4F76-882D-2D235050E783}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MaquinEstado", "MaquinEstado", "{EFE74518-B9BF-43EE-BEB0-55CBFBF3BF1B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MaquinaEstado", "MaquinaEstado", "{EFE74518-B9BF-43EE-BEB0-55CBFBF3BF1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.Maquina", "CodeBehind.PadraoProjeto.Maquina\CodeBehind.PadraoProjeto.Maquina.csproj", "{0EE1DD51-2B6A-46F5-8AE5-FF8FAB35DDE0}"
 EndProject

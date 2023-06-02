@@ -1,4 +1,6 @@
-﻿using MassTransit;
+﻿//***CODE BEHIND - BY RODOLFO.FONSECA***//
+
+using MassTransit;
 using Microsoft.Extensions.Hosting;
 
 namespace CodeBehind.PadraoProjeto.Maquina
@@ -21,7 +23,9 @@ namespace CodeBehind.PadraoProjeto.Maquina
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                await _bus.Publish(new Message { Text = $"Tempo {DateTimeOffset.Now}" }, stoppingToken);
+                var obj = new Mensagem { Conteudo = $"Tempo {DateTime.Now}" };
+
+                await _bus.Publish(obj, stoppingToken);
 
                 await Task.Delay(1000, stoppingToken);
             }

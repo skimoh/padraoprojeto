@@ -1,3 +1,11 @@
+//***CODE BEHIND - BY RODOLFO.FONSECA***//
+/*
+ 
+Uma saga é uma transação de longa duração gerenciada por um coordenador. 
+As sagas são iniciadas por um evento, as sagas orquestram eventos e as sagas mantêm o estado da transação geral. 
+Sagas são projetadas para gerenciar a complexidade de uma transação distribuída sem travamento e consistência imediata.
+ 
+ */
 using CodeBehind.PadraoProjeto.MaquinaSaga;
 using CodeBehind.PadraoProjeto.MaquinaSaga.Event;
 using MassTransit;
@@ -15,6 +23,7 @@ sv.AddSwaggerGen(c =>
 
 sv.AddMassTransit(cfg =>
 {
+    //armazenamento dos estados
     cfg.AddSagaStateMachine<OrderStateMachine, OrderState>()
         .MongoDbRepository(r =>
         {
@@ -23,6 +32,8 @@ sv.AddMassTransit(cfg =>
             r.CollectionName = "pedido";
         });
 
+    //transporte
+    //O transporte na memória destina-se a ser usado apenas em um único processo.(testes) Não pode ser usado para comunicação entre vários processos (mesmo que estejam na mesma máquina).
     cfg.AddBus(context => Bus.Factory.CreateUsingInMemory(cfg =>
     {
         cfg.ReceiveEndpoint("orderRequest", e =>
@@ -33,10 +44,10 @@ sv.AddMassTransit(cfg =>
             e.ConfigureSaga<OrderState>(context);
         });
     }));
-
+    
     var timeout = TimeSpan.FromSeconds(10);
     var serviceAddress = new Uri("loopback://localhost/orderRequest");
-    cfg.AddRequestClient<IPedidoEnviado>(serviceAddress);
+    cfg.AddRequestClient<IPedidoEnviado>(serviceAddress, timeout);
 });
 
 var app = builder.Build();
