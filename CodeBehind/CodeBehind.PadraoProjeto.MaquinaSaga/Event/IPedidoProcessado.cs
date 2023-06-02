@@ -2,10 +2,8 @@
 
 namespace CodeBehind.PadraoProjeto.MaquinaSaga.Event
 {
-    public interface IPedidoProcessado
+    public interface IPedidoProcessado : IEventoBase
     {
-        public Guid? RequestId { get; set; }
-        Guid CurrelationId { get; }
-        DateTime Timestamp { get; }
+        
     }
 }

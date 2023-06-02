@@ -9,6 +9,7 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
     public class OrderStateMachine : MassTransitStateMachine<OrderState>
     {
         public readonly ILogger<OrderStateMachine> _logger;
+
         public OrderStateMachine(ILogger<OrderStateMachine> logger)
         {
             _logger = logger;
@@ -27,10 +28,12 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
                 e.InsertOnInitial = true;
                 e.SetSagaFactory(c => new OrderState
                 {
-                    ResponseAddress = c.ResponseAddress,
-                    SubmitDate = c.Message.Timestamp,
                     CorrelationId = c.Message.CurrelationId,
                     RequestId = c.Message.RequestId,
+                    ResponseAddress = c.ResponseAddress,                    
+                    SubmitDate = c.Message.DataOcorrencia,
+                    
+                    CodigoPedido = c.Message.CodigoPedido,
                     InfoComplementar = c.Message.Info
                 });
             });
@@ -42,8 +45,9 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
                   .Then(context =>
                   {
                       context.Saga.CorrelationId = context.Message.CurrelationId;
-                      context.Saga.Updated = context.Message.Timestamp;
+                      context.Saga.Updated = DateTime.Now;
                       context.Saga.RequestId = context.RequestId;
+                      context.Saga.CodigoPedido = context.Message.CodigoPedido;
                   })
                   .Then(x => _logger.LogInformation("=>EventoEnviado"))
                   .ThenAsync(MetodoEnviar)
@@ -69,9 +73,13 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
                 );
         }
 
+        #region METODOS
+        
         private async Task MetodoCancelar(BehaviorContext<OrderState, IPedidoCancelado> context)
         {
             _logger.LogInformation("=>Entrou no MetodoCancelar");
+
+            context.Saga.Updated = DateTime.Now;
 
             var client = await context.GetSendEndpoint(context.Saga.ResponseAddress);
 
@@ -84,10 +92,11 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
             await client.Send(resp, r => r.RequestId = context.Saga.RequestId);
         }
 
-
         private async Task MetodoCompletado(BehaviorContext<OrderState, IPedidoCompletado> context)
         {
-            _logger.LogInformation("=>Entrou no MetodoCompletado");
+            _logger.LogInformation($"=>Entrou no MetodoCompletado {context.Message.CodigoPedido}");
+
+            context.Saga.Updated = DateTime.Now;
 
             var client = await context.GetSendEndpoint(context.Saga.ResponseAddress);
 
@@ -102,32 +111,46 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga
 
         private Task MetodoProcessar(BehaviorContext<OrderState, IPedidoProcessado> context)
         {
-            _logger.LogInformation("=>Entrou no MetodoProcessar");
+            _logger.LogInformation($"=>Entrou no MetodoProcessar {context.Message.CodigoPedido}");
 
+            context.Saga.Updated = DateTime.Now;
+            
             return context.Publish<IPedidoCompletado>(new
             {
                 CurrelationId = context.Message.CurrelationId,
-                Timestamp = DateTime.Now,
-                RequestId = context.Saga.RequestId
+                RequestId = context.Saga.RequestId,
+                
+                DataOcorrencia = DateTime.Now,
+                CodigoPedido = context.Message.CodigoPedido
             });
         }
 
         private Task MetodoEnviar(BehaviorContext<OrderState, IPedidoEnviado> context)
         {
-            _logger.LogInformation("=>Entrou no MetodoEnviar");
+            _logger.LogInformation($"=>Entrou no MetodoEnviar {context.Message.CodigoPedido}");
+
+            context.Saga.Updated = DateTime.Now;
 
             return context.Publish<IPedidoProcessado>(new
             {
                 CurrelationId = context.Message.CurrelationId,
-                Timestamp = DateTime.Now,
-                RequestId = context.Saga.RequestId
+                RequestId = context.Saga.RequestId,
+
+                DataOcorrencia = DateTime.Now,
+                CodigoPedido = context.Message.CodigoPedido
             });
         }
 
+        #endregion
+
+        #region STATUS
+        
         public State StatusEnviado { get; private set; }
         public State StatusProcessado { get; private set; }
         public State StatusCancelado { get; private set; }
         public State StatusCompletado { get; private set; }
+
+        #endregion
 
         public Event<IPedidoEnviado> EventoEnviado { get; private set; }
         public Event<IPedidoProcessado> EventoProcessado { get; private set; }

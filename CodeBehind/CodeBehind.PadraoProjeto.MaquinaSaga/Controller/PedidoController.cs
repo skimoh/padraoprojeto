@@ -35,9 +35,11 @@ namespace CodeBehind.PadraoProjeto.MaquinaSaga.Controller
             {
 
                 var obj = new
-                {
+                {                    
                     CurrelationId = Guid.NewGuid(),
-                    Timestamp = DateTime.Now,
+                    DataOcorrencia = DateTime.Now,
+
+                    CodigoPedido = req.CodigoPedido,
                     Info = req.Info
                 };
 
