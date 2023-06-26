@@ -18,16 +18,17 @@ sv.AddAuthentication(x =>
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
+           //Habilita a autenticação do portador JWT usando o esquema AuthenticationScheme padrão.
            .AddJwtBearer(x =>
            {
-               x.RequireHttpsMetadata = false;
-               x.SaveToken = true;
+               x.RequireHttpsMetadata = false; //Obtém ou define se HTTPS é necessário para o endereço ou autoridade de metadados
+               x.SaveToken = true; //É uma propriedade que define se o token do portador deve ser armazenado em AuthenticationProperties após uma autorização bem-sucedida
                x.TokenValidationParameters = new TokenValidationParameters
                {
-                   ValidateIssuerSigningKey = true,
-                   IssuerSigningKey = new SymmetricSecurityKey(key),
-                   ValidateIssuer = false,
-                   ValidateAudience = false
+                   ValidateIssuerSigningKey = true, //Obtém ou define um booleano que controla se a validação do SecurityKey que assinou o securityToken é chamada.
+                   IssuerSigningKey = new SymmetricSecurityKey(key), //Obtém ou define o SecurityKey que deve ser usado para validação de assinatura.
+                   ValidateIssuer = false,//Obtém ou define um booleano para controlar se o emissor será validado durante a validação do token.
+                   ValidateAudience = false //Obtém ou define um booleano para controlar se o público(destinatátio) será validado durante a validação do token.
                };
            });
 

@@ -21,14 +21,15 @@ namespace CodeBehind.PadraoProjeto.SegurancaJWT
                 });
 
             var expiracao = DateTime.UtcNow.AddHours(2);
-            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenHandler = new JwtSecurityTokenHandler();//Um SecurityTokenHandler projetado para criar e validar Json Web Tokens
             var key = Encoding.ASCII.GetBytes(_chave);
 
+            //Esse é um espaço reservado para todos os atributos relacionados ao token emitido.
             var tokenDescriptor = new SecurityTokenDescriptor
-            {                
+            {
                 Subject = obj,
                 Expires = expiracao,
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)//Representa a chave criptográfica e os algoritmos de segurança usados para gerar uma assinatura digital.
             };
 
             var Segurancatoken = tokenHandler.CreateToken(tokenDescriptor);

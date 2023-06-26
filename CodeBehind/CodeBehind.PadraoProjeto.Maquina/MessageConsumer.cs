@@ -30,7 +30,7 @@ namespace CodeBehind.PadraoProjeto.Maquina
     }
 
     /// <summary>
-    /// DTO
+    /// DTO tipo de referência - ainda que a semântica padrão seja por valor, e ele é armazenado sempre no heap
     /// </summary>
     public record Mensagem
     {

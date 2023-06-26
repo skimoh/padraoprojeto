@@ -6,11 +6,10 @@ using CodeBehind.PadraoProjeto.Maquina;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Reflection;
 
-var entry = Assembly.GetExecutingAssembly();
-
+//Executa as ações fornecidas para inicializar o host
 await Host.CreateDefaultBuilder(args)
+    //configurar os serviços do aplicativo.
     .ConfigureServices((hostContext, services) =>
     {
         services.AddMassTransit(x =>
