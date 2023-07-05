@@ -31,3 +31,5 @@
 /CodeBehind/CodeBehind.PadraoProjeto.MaquinaSaga/obj
 /CodeBehind/CodeBehind.PadraoProjeto.SegurancaJWT/bin/Debug/net6.0
 /CodeBehind/CodeBehind.PadraoProjeto.SegurancaJWT/obj
+/CodeBehind/CodeBehind.PadraoProjeto.CQRSPattern/bin/Debug/net7.0
+/CodeBehind/CodeBehind.PadraoProjeto.CQRSPattern/obj
