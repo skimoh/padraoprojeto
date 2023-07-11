@@ -12,7 +12,7 @@ namespace CodeBehind.PadraoProjeto.CQRSPattern.Queries
         }
         public async Task<ClienteConsultarResponse> Handle(ClienteConsultarQuery request, CancellationToken cancellationToken)
         {
-            //consultar na base
+            //consultar no contexto de leitura
             return await Task.FromResult(new ClienteConsultarResponse() { Cliente = new Cliente() { Id = 1, Nome = "Joao" } });
         }
     }

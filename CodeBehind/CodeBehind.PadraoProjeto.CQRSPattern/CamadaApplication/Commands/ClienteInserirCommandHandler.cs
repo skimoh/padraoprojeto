@@ -12,7 +12,7 @@ namespace CodeBehind.PadraoProjeto.CQRSPattern.Commands
         }
         public async Task<ClienteInserirResponse> Handle(ClienteInserirCommand request, CancellationToken cancellationToken)
         {
-            //persistir
+            //persistir contexto de escrita
 
             return await Task.FromResult(new ClienteInserirResponse() { Sucesso = true });
         }
