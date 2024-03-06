@@ -33,3 +33,13 @@
 /CodeBehind/CodeBehind.PadraoProjeto.SegurancaJWT/obj
 /CodeBehind/CodeBehind.PadraoProjeto.CQRSPattern/bin/Debug/net7.0
 /CodeBehind/CodeBehind.PadraoProjeto.CQRSPattern/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Api.Mediator/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.ApiGateway/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.ApiGateway/obj
+/CodeBehind/CodeBehind.PadraoProjeto.ApiGateway.ApiA/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.ApiGateway.ApiA/obj
+/CodeBehind/CodeBehind.PadraoProjeto.Application/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.Dto/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.Repository/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.Teste/bin/Debug/net6.0
+/CodeBehind/CodeBehind.PadraoProjeto.Teste/obj
