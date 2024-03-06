@@ -10,6 +10,7 @@ namespace CodeBehind.PadraoProjeto.Repository
     {
         Task<IEnumerable<Cliente>> ListarPor(string nome);
         Task<int> Inserir(Cliente obj);
+        Task<int> InserirRetaguarda(Cliente obj);
     }
     public class ClienteRepository : IClienteRepository
     {
@@ -27,6 +28,13 @@ namespace CodeBehind.PadraoProjeto.Repository
             lista.Add(new Cliente { Id = 2, Nome = "maria" });
 
             return Task.FromResult<IEnumerable<Cliente>>(lista);
+        }
+
+        public Task<int> InserirRetaguarda(Cliente obj)
+        {
+            Console.WriteLine(obj.Id);
+
+            return Task.FromResult(1);
         }
     }
 }

@@ -20,9 +20,25 @@ namespace CodeBehind.PadraoProjeto.Application
 
         public async Task<int> Handle(ClienteInserirCommand cmd, CancellationToken cancellationToken)
         {
-            var cliente = new Cliente { Id = cmd.Id, Nome = cmd.Nome };
+            int retornoBanco = 0;
 
-            return await _rep.Inserir(cliente);
+            var cliente = _mapper.Map<Cliente>(cmd);
+
+            if (cmd.Id == 0)
+            {
+                throw new System.Exception("Id de cliente não encontrado");
+            }
+
+            if (cmd.Id > 9999)
+            {
+                retornoBanco = await _rep.InserirRetaguarda(cliente);
+            }
+            else
+            {
+                retornoBanco = await _rep.Inserir(cliente);
+            }
+
+            return retornoBanco;
         }
 
     }

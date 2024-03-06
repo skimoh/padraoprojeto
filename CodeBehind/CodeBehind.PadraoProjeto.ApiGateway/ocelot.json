@@ -1,0 +1,16 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/destino/{id}",//ROTA DE DESTINO
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5182
+        }
+      ],
+      "UpstreamPathTemplate": "/proxy/{id}", //ROTA DE ENTRADA
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]  
+}

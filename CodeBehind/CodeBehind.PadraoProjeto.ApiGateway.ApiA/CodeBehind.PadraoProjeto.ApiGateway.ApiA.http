@@ -1,0 +1,6 @@
+@CodeBehind.PadraoProjeto.ApiGateway.ApiA_HostAddress = http://localhost:5182
+
+GET {{CodeBehind.PadraoProjeto.ApiGateway.ApiA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
