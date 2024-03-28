@@ -43,3 +43,13 @@
 /CodeBehind/CodeBehind.PadraoProjeto.Repository/bin/Debug/net6.0
 /CodeBehind/CodeBehind.PadraoProjeto.Teste/bin/Debug/net6.0
 /CodeBehind/CodeBehind.PadraoProjeto.Teste/obj
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto/obj
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Application/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Application/obj
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Domain/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Domain/obj
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Infrastructure/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Infrastructure/obj
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Test/bin/Debug/net8.0
+/CodeBehind/CodeBehind.PadraoProjeto.MicroServicoProduto.Test/obj
