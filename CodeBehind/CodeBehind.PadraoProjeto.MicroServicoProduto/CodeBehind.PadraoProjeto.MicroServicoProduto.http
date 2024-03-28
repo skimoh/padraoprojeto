@@ -1,0 +1,6 @@
+@CodeBehind.PadraoProjeto.MicroServicoProduto_HostAddress = http://localhost:5193
+
+GET {{CodeBehind.PadraoProjeto.MicroServicoProduto_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

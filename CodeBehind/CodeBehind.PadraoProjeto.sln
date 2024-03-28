@@ -53,7 +53,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{D70C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBehind.PadraoProjeto.ApiGateway", "CodeBehind.PadraoProjeto.ApiGateway\CodeBehind.PadraoProjeto.ApiGateway.csproj", "{AD8B0951-997C-4FFC-A956-1C0249EA30D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.ApiGateway.ApiA", "CodeBehind.PadraoProjeto.ApiGateway.ApiA\CodeBehind.PadraoProjeto.ApiGateway.ApiA.csproj", "{E679A7AC-1292-47C8-9B11-BD601CB8D949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeBehind.PadraoProjeto.ApiGateway.ApiA", "CodeBehind.PadraoProjeto.ApiGateway.ApiA\CodeBehind.PadraoProjeto.ApiGateway.ApiA.csproj", "{E679A7AC-1292-47C8-9B11-BD601CB8D949}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDD-Docker", "DDD-Docker", "{DA7E4C69-8464-4003-A9D9-843EFD61B948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.MicroServicoProduto", "CodeBehind.PadraoProjeto.MicroServicoProduto\CodeBehind.PadraoProjeto.MicroServicoProduto.csproj", "{AB3EE0B7-34A5-4DD0-8DD1-0DC5011D7948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.MicroServicoProduto.Application", "CodeBehind.PadraoProjeto.MicroServicoProduto.Application\CodeBehind.PadraoProjeto.MicroServicoProduto.Application.csproj", "{C8916783-4BFB-41A3-9323-A9290DBAFA08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.MicroServicoProduto.Domain", "CodeBehind.PadraoProjeto.MicroServicoProduto.Domain\CodeBehind.PadraoProjeto.MicroServicoProduto.Domain.csproj", "{3E2F7CDB-9CE4-4C37-BAE6-E524112B42CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.MicroServicoProduto.Infrastructure", "CodeBehind.PadraoProjeto.MicroServicoProduto.Infrastructure\CodeBehind.PadraoProjeto.MicroServicoProduto.Infrastructure.csproj", "{C9440943-7D84-4369-BA9C-31D9A9CAB0CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBehind.PadraoProjeto.MicroServicoProduto.Test", "CodeBehind.PadraoProjeto.MicroServicoProduto.Test\CodeBehind.PadraoProjeto.MicroServicoProduto.Test.csproj", "{E3164143-1016-47F1-86CD-826502A43574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +145,26 @@ Global
 		{E679A7AC-1292-47C8-9B11-BD601CB8D949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E679A7AC-1292-47C8-9B11-BD601CB8D949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E679A7AC-1292-47C8-9B11-BD601CB8D949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3EE0B7-34A5-4DD0-8DD1-0DC5011D7948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3EE0B7-34A5-4DD0-8DD1-0DC5011D7948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3EE0B7-34A5-4DD0-8DD1-0DC5011D7948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3EE0B7-34A5-4DD0-8DD1-0DC5011D7948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8916783-4BFB-41A3-9323-A9290DBAFA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8916783-4BFB-41A3-9323-A9290DBAFA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8916783-4BFB-41A3-9323-A9290DBAFA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8916783-4BFB-41A3-9323-A9290DBAFA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2F7CDB-9CE4-4C37-BAE6-E524112B42CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2F7CDB-9CE4-4C37-BAE6-E524112B42CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2F7CDB-9CE4-4C37-BAE6-E524112B42CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2F7CDB-9CE4-4C37-BAE6-E524112B42CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9440943-7D84-4369-BA9C-31D9A9CAB0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9440943-7D84-4369-BA9C-31D9A9CAB0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9440943-7D84-4369-BA9C-31D9A9CAB0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9440943-7D84-4369-BA9C-31D9A9CAB0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3164143-1016-47F1-86CD-826502A43574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3164143-1016-47F1-86CD-826502A43574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3164143-1016-47F1-86CD-826502A43574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3164143-1016-47F1-86CD-826502A43574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +188,11 @@ Global
 		{B6EF1A68-6436-406F-BC97-C773C0BE7981} = {8D1156CE-6D2F-470E-BA5F-A40929077426}
 		{AD8B0951-997C-4FFC-A956-1C0249EA30D2} = {D70C20D9-594F-4A20-9EC0-C23BA8572538}
 		{E679A7AC-1292-47C8-9B11-BD601CB8D949} = {D70C20D9-594F-4A20-9EC0-C23BA8572538}
+		{AB3EE0B7-34A5-4DD0-8DD1-0DC5011D7948} = {DA7E4C69-8464-4003-A9D9-843EFD61B948}
+		{C8916783-4BFB-41A3-9323-A9290DBAFA08} = {DA7E4C69-8464-4003-A9D9-843EFD61B948}
+		{3E2F7CDB-9CE4-4C37-BAE6-E524112B42CC} = {DA7E4C69-8464-4003-A9D9-843EFD61B948}
+		{C9440943-7D84-4369-BA9C-31D9A9CAB0CF} = {DA7E4C69-8464-4003-A9D9-843EFD61B948}
+		{E3164143-1016-47F1-86CD-826502A43574} = {DA7E4C69-8464-4003-A9D9-843EFD61B948}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {031046F5-8C50-4F12-8DDB-45B762992F43}
