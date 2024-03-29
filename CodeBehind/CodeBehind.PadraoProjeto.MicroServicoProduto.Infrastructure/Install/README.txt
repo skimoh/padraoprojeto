@@ -1,1 +1,29 @@
-﻿****COMENDOS DOCKER****
+﻿INSTALAR DOCKER DESKTOP
+
+ABRIR PROMPT DE COMANDO 
+
+==>>>>>> sql server ref https://hub.docker.com/_/microsoft-mssql-server
+***RODAR O COMANDO ABAIXO PARA BAIXAR A IMAGEM DO SQL SERVER
+
+docker pull mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+
+**INSTALAR IMAGEM SQL SERVER
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=c@d381h1nD" -e "MSSQL_PID=Evaluation" -p 1499:1433  --name sqlpreview --hostname sqlpreview -d mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+
+**CASO NÃO INICIE AUTOMATICAMENTE 
+docker start sqlpreview
+
+**COM A INSTANCIA CRIADA NO CONTAINER VOCE CONSEGUE ACESSAR VIA MANAGEMENT STUDIO OU DBEAVER
+**RODE O SCRIPT NA PASTA *.SQL PARA CRIAÇÃO DO BANCO E DA TABELA
+
+==>>>>>>kafka
+**DENTRO DA PASTA TEM UM ARQUIVO .YML COM AS CONFIGURAÇÕES INSTALAÇÃO DA IMAGEM DO KAFKA 
+**BASTA ACESSAR A PASTA COM O ARQUIVO E RODAR O COMANDO ABAIXO
+
+docker-compose up -d
+
+**COM ISSO VOCE JÁ TERÁ O KAFKA E O ZOOKEEPER INSTALADO E RODANDO NA PORTA 9092
+
+**EXIBIR OS CONTAINER E IMAGES
+docker ps
+docker images

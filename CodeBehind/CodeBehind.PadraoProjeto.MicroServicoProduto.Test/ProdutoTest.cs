@@ -43,7 +43,7 @@ namespace CodeBehind.PadraoProjeto.MicroServicoProduto.Test
         }
 
         [Test]
-        public void Quando_Informado_Nome_Invalida_Retornar_Erro()
+        public void Quando_Informado_Nome_Invalido_Retornar_Erro()
         {
             //Arrange
             _mockApp.Setup<Task<int>>(x => x.CadastroAsync(ProdutoMock._produtoNomeAusente)).Returns(Task.FromResult(1));
